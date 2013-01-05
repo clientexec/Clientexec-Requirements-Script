@@ -1,38 +1,38 @@
 <?php
     $errors = array();
     $warnings = array();
-    
+
     if ( extension_loaded('ionCube Loader') ) {
         $version = 'ionCube';
     } else {
         $errors[] = 'Unable to find the ionCube Loader.  Please be sure the ionCube Loader is installed and configured on your server';
     }
-    
+
     if ( version_compare(PHP_VERSION, '5.2.0', '<') ) {
         $errors[] = 'ClientExec requires you run PHP 5.2.0 or newer.  You are currently running ' . PHP_VERSION;
     }
-            
+
     if ( !function_exists('mysql_connect') ) {
 	$errors[] = 'The required PHP extension MySQL could not be found.';
     }
-    
+
     if ( !function_exists('mb_ereg') ) {
 	$errors[] = 'The required PHP extension Multibyte String with Regex could not be found.';
     }
-    
+
     if ( !function_exists('gd_info') ) {
         $errors[] = 'The PHP extension GD could not be found.  This is required for report graphs.';
     }
-    
+
     // Warnings
     if ( !extension_loaded('mcrypt') ) {
         $warnings[] = 'The PHP extension mcrypt could not be found.  You will not be able to encrypt hosting passwords, or store Credit Card information.';
     }
-    
+
     if ( !function_exists('curl_init') ) {
         $warnings[] = 'The PHP extension cURL could not be found.  Some control panel and dashboard plugins require this extension.';
     }
-    
+
     if ( !function_exists('imap_mime_header_decode') ) {
         $warnings[] = 'The PHP extension imap could not be found.  This is required for e-mail fetching and piping to function.';
     }
@@ -50,14 +50,14 @@
         <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:none; background-color:#dfdfdf; margin:0; padding:0; width:100% !important;">
     	<center>
 
-        
+
 <div style="background-color:#dfdfdf">
-  
+
   <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;border:0;margin:0">
     <tbody>
       <tr>
         <td align="center">
-          
+
           <table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="0" width="660" style="margin:0;background-color:#ffffff;border-width:15px;border-style:solid;border-color:#333;width:660px;border-radius:10px">
             <tbody>
               <tr bgcolor="#333" style="background-color:#333">
@@ -117,8 +117,8 @@
                                   <?php
                                     }
                                   ?>
-                                  
-                                  
+
+
                                    <?php
                                     if ( count($warnings) > 0 ) {
                                   ?>
@@ -136,7 +136,7 @@
                                   <?php
                                     }
                                   ?>
-                                  
+
                                   <?php if ( count($errors) == 0 ) { ?>
                                     <h3 style="color: green">Requirements Met</h3>
                                     <p>Congratulations, your server meets all of the ClientExec requirements.</p>
@@ -148,11 +148,11 @@
                           </table>
                         </td>
                         <td width="40" style="font-size:0"><img src="https://s3.amazonaws.com/ClientExecEmail/spacer.png" alt="" width="40" height="1" border="0" style="border:0"></td>
-                      </tr>                 
+                      </tr>
                     </tbody>
                   </table>
                 </td>
-              </tr>             
+              </tr>
             </tbody>
           </table>
         </td>
@@ -161,7 +161,7 @@
   </table>
   <div class="yj6qo"></div><div class="adL">
 </div></div>
-	
+
 </center>
 </body>
 </html>
