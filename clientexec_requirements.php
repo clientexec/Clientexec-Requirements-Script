@@ -4,12 +4,8 @@
     
     if ( extension_loaded('ionCube Loader') ) {
         $version = 'ionCube';
-    } else if ( extension_loaded('Zend Optimizer') && version_compare(PHP_VERSION, '5.3.0', '>=' ) ) {
-        $version = 'Zend-5.3';
-    } else if ( extension_loaded('Zend Optimizer') && version_compare(PHP_VERSION, '5.2.0', '>=' ) ) {
-        $version = 'Zend-5.2';
     } else {
-        $errors[] = 'Unable to find a valid encoding.  Please be sure the ionCube Loader or the Zend Optimizer is installed and configured on your server';
+        $errors[] = 'Unable to find the ionCube Loader.  Please be sure the ionCube Loader is installed and configured on your server';
     }
     
     if ( version_compare(PHP_VERSION, '5.2.0', '<') ) {
