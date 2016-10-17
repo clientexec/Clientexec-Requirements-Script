@@ -8,12 +8,12 @@
         $errors[] = 'Unable to find the ionCube Loader.  Please be sure the ionCube Loader is installed and configured on your server';
     }
 
-    if ( version_compare(PHP_VERSION, '5.2.0', '<') ) {
-        $errors[] = 'ClientExec requires you run PHP 5.2.0 or newer.  You are currently running ' . PHP_VERSION;
+    if ( version_compare(PHP_VERSION, '5.6.0', '<') ) {
+        $errors[] = 'ClientExec requires you run PHP 5.6.0 or newer.  You are currently running ' . PHP_VERSION;
     }
 
-    if ( !function_exists('mysql_connect') ) {
-	$errors[] = 'The required PHP extension MySQL could not be found.';
+    if ( !function_exists('mysqli_connect') ) {
+	$errors[] = 'The required PHP extension MySQLi could not be found.';
     }
 
     if ( !function_exists('mb_ereg') ) {
